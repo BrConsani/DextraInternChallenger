@@ -47,7 +47,7 @@ class _MyHomePageState extends State<CartPage> {
       context: context,
       child: AlertDialog(
         title: Text('Produto removido do carrinho'),
-        content: Text('Navegue até o lista de produtos pela barra superior '
+        content: Text('Navegue até a lista de produtos pela barra superior '
             'para adicionar mais produtos ao seu carrinho.'),
         actions: [
           FlatButton(
