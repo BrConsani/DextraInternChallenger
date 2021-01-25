@@ -33,8 +33,7 @@ class _MyHomePageState extends State<CartPage> {
           itemBuilder: (_, index) => ProductCard(
             icon: Icons.delete,
             product: controller.productsInCart[index],
-            onTapIcon: () =>
-                _handleOnTapIcon(context, controller.productsInCart[index]),
+            onTapIcon: () => _handleOnTapIcon(context, controller.productsInCart[index]),
           ),
         ),
       ),
@@ -48,7 +47,8 @@ class _MyHomePageState extends State<CartPage> {
       child: AlertDialog(
         title: Text('Produto removido do carrinho'),
         content: Text('Navegue até a lista de produtos pela barra superior '
-            'para adicionar mais produtos ao seu carrinho.'),
+          'para adicionar mais produtos ao seu carrinho.'
+        ),
         actions: [
           FlatButton(
             child: Text('OK'),

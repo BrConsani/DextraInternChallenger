@@ -14,12 +14,7 @@ abstract class _CartPageController with Store {
 
   List<Product> get productsInCart => _cartStore.cart;
 
-  void init(BuildContext context) {
-    _cartStore = Provider.of<CartStore>(context);
-  }
+  void init(BuildContext context) => _cartStore = Provider.of<CartStore>(context);
 
-  @action
-  void removeProductFromCart(Product product) {
-    _cartStore.removeFromCart(product);
-  }
+  void removeProductFromCart(Product product) => _cartStore.removeFromCart(product);
 }

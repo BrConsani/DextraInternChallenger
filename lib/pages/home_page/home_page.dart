@@ -30,7 +30,7 @@ class _MyHomePageState extends State<HomePage> {
           Center(
             child: Observer(
               builder: (_) => Text(
-                controller.productsInCart.toString(),
+                controller.quantityInCart.toString(),
               ),
             ),
           ),

@@ -17,21 +17,15 @@ abstract class _HomePageController with Store {
   @observable
   List<Product> products;
 
-  @computed
-  int get productsInCart => _cartStore.cart.length;
+  int get quantityInCart => _cartStore.cart.length;
 
   void init(BuildContext context) {
     _cartStore = Provider.of<CartStore>(context);
-    fetchProducts();
+    _fetchProducts();
   }
 
   @action
-  void fetchProducts() {
-    products = _productRepository.getProducts();
-  }
+  void _fetchProducts() => products = _productRepository.getProducts();
 
-  @action
-  void addProductToCart(Product product) {
-    _cartStore.addToCart(product);
-  }
+  void addProductToCart(Product product) => _cartStore.addToCart(product);
 }

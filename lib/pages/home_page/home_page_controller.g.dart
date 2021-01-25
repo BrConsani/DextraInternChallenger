@@ -9,14 +9,6 @@ part of 'home_page_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$HomePageController on _HomePageController, Store {
-  Computed<int> _$productsInCartComputed;
-
-  @override
-  int get productsInCart =>
-      (_$productsInCartComputed ??= Computed<int>(() => super.productsInCart,
-              name: '_HomePageController.productsInCart'))
-          .value;
-
   final _$productsAtom = Atom(name: '_HomePageController.products');
 
   @override
@@ -36,22 +28,11 @@ mixin _$HomePageController on _HomePageController, Store {
       ActionController(name: '_HomePageController');
 
   @override
-  void fetchProducts() {
+  void _fetchProducts() {
     final _$actionInfo = _$_HomePageControllerActionController.startAction(
-        name: '_HomePageController.fetchProducts');
+        name: '_HomePageController._fetchProducts');
     try {
-      return super.fetchProducts();
-    } finally {
-      _$_HomePageControllerActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void addProductToCart(Product product) {
-    final _$actionInfo = _$_HomePageControllerActionController.startAction(
-        name: '_HomePageController.addProductToCart');
-    try {
-      return super.addProductToCart(product);
+      return super._fetchProducts();
     } finally {
       _$_HomePageControllerActionController.endAction(_$actionInfo);
     }
@@ -60,8 +41,7 @@ mixin _$HomePageController on _HomePageController, Store {
   @override
   String toString() {
     return '''
-products: ${products},
-productsInCart: ${productsInCart}
+products: ${products}
     ''';
   }
 }

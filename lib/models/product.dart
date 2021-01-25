@@ -1,4 +1,10 @@
 class Product {
+  String identifier;
+  String name;
+  String imageUrl;
+  double amount;
+  List<String> details;
+
   Product({
     this.identifier,
     this.name,
@@ -6,12 +12,6 @@ class Product {
     this.amount,
     this.details,
   });
-
-  String identifier;
-  String name;
-  String imageUrl;
-  double amount;
-  List<String> details;
 
   factory Product.fromJson(Map<String, dynamic> json) => Product(
         identifier: json["identifier"],
@@ -33,6 +33,7 @@ class Product {
   int get hashCode => identifier.hashCode;
 
   @override
-  bool operator ==(Object other) =>
-      other is Product ? this.identifier == other.identifier : false;
+  bool operator ==(Object other) => other is Product 
+      ? this.identifier == other.identifier 
+      : false;
 }
